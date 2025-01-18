@@ -98,7 +98,8 @@ def generate_post(topic):
 @app.post("/generate-post")
 async def generate_post_api(topic: Topic):
     generated_post = generate_post(topic.topic)
-    return generated_post
+    print(f"Received topic: {topic.topic}")
+    return {"generated_post": f"Post about {topic.topic}"}, generated_post
 
 @app.get("/")
 async def root():
