@@ -81,7 +81,7 @@ def generate_post(topic):
         response_post = openai.ChatCompletion.create(
             model="gpt-4o-mini",
             messages=[{"role": "user", "content": prompt_post}],
-            max_tokens=100,
+            max_tokens=30,
             n=1,
             temperature=0.7,
         )
